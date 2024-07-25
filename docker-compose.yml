@@ -1,0 +1,17 @@
+services:
+  mariadb:
+    image: mariadb:lts
+    container_name: mariadb_senai
+    environment:
+      MYSQL_ROOT_PASSWORD: nopass
+      MYSQL_USER: lu
+      MYSQL_PASSWORD: nopass
+      MYSQL_DATABASE: ExoApi
+    user: "${UID}:${GID}"
+    volumes:
+      # https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
+      - ./datadir:/var/lib/mysql:Z
+      - ./initdb.d:/docker-entrypoint-initdb.d:Z
+    ports:
+      - "3306:3306"
+
