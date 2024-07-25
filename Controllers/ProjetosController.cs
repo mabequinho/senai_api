@@ -1,8 +1,6 @@
 using Exo.WebApi.Models;
 using Exo.WebApi.Repositories;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
 
 namespace Exo.WebApi.Controllers
 {
